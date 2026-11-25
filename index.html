@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f7f1e5">
+<title>任務小隊｜情境闖關遊戲</title>
+<style>
+:root{--ink:#283b3b;--muted:#6e7b75;--cream:#fbf7ee;--paper:#fffdf8;--teal:#315f5b;--teal2:#e4efea;--orange:#d98254;--yellow:#f1cf78;--pink:#f4e4dc;--line:#e8e0d2;--shadow:0 12px 34px rgba(45,60,51,.09)}
+*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:ui-rounded,"Noto Sans TC","PingFang TC",system-ui,sans-serif}
+button{font:inherit;cursor:pointer;border:0}.shell{max-width:1060px;margin:auto;padding:22px 22px 48px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:28px}.brand{display:flex;align-items:center;gap:11px;font-weight:850;letter-spacing:.04em}.brand-mark{width:42px;height:42px;border-radius:14px;background:var(--yellow);display:grid;place-items:center;font-size:23px}.top-note{color:var(--muted);font-size:13px}
+.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:28px;padding:clamp(24px,5vw,48px);box-shadow:var(--shadow);overflow:hidden;position:relative}
+.eyebrow{display:inline-flex;background:var(--teal2);color:var(--teal);padding:7px 12px;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.08em}
+h1{font-size:clamp(32px,5vw,52px);line-height:1.18;margin:17px 0 12px;letter-spacing:-.04em}.hero p{color:var(--muted);line-height:1.9;margin:0;max-width:520px}.hero-art{min-height:220px;display:grid;place-items:center;position:relative}.island{width:210px;height:180px;border-radius:48% 52% 44% 56%;background:#e7efdf;display:grid;place-items:center;transform:rotate(-7deg);font-size:86px;position:relative}.island:before,.island:after{content:"";position:absolute;border-radius:50%;background:#f1cf78}.island:before{width:25px;height:25px;top:8px;right:10px}.island:after{width:14px;height:14px;bottom:15px;left:12px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}.primary{background:var(--teal);color:white;padding:14px 23px;border-radius:14px;font-weight:800;box-shadow:0 5px 0 #244744}.primary:hover{transform:translateY(-1px)}.secondary{background:#f3eee3;color:var(--ink);padding:14px 18px;border-radius:14px;font-weight:750}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0 28px}.stat{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:15px 18px}.stat small{display:block;color:var(--muted);font-size:12px}.stat strong{display:block;font-size:22px;margin-top:5px}
+.section-head{display:flex;align-items:end;justify-content:space-between;margin:28px 2px 14px;gap:10px}.section-head h2{margin:0;font-size:21px}.section-head span{font-size:12px;color:var(--muted)}
+.levels{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.level{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:18px;min-height:142px}.level .emoji{font-size:28px}.level h3{margin:12px 0 5px;font-size:16px}.level p{margin:0;color:var(--muted);font-size:13px;line-height:1.65}.level.locked{opacity:.58}
+.game{display:none;margin-top:24px;background:var(--paper);border:1px solid var(--line);border-radius:26px;padding:clamp(20px,4vw,34px);box-shadow:var(--shadow)}.game.active{display:block}.game-top{display:flex;justify-content:space-between;gap:14px;align-items:center}.progress-wrap{height:8px;background:#eee9df;border-radius:99px;margin:16px 0 24px;overflow:hidden}.progress{height:100%;width:0;background:var(--orange);border-radius:99px;transition:width .3s}.tag{font-size:12px;color:var(--teal);font-weight:800;background:var(--teal2);padding:7px 11px;border-radius:99px}.question{font-size:clamp(21px,3vw,28px);line-height:1.5;margin:12px 0 22px}.choices{display:grid;grid-template-columns:1fr 1fr;gap:12px}.choice{background:#fff;border:1.5px solid var(--line);border-radius:15px;padding:15px;text-align:left;color:var(--ink);font-weight:700;min-height:58px}.choice:hover{border-color:var(--teal);background:#f7fbf8}.choice.correct{border-color:#6b9d79;background:#eaf4eb}.choice.wrong{border-color:#d98b72;background:#fbefeb}.feedback{display:none;margin-top:18px;padding:14px 16px;border-radius:14px;line-height:1.6}.feedback.show{display:block}.feedback.good{background:#eaf4eb;color:#315b3c}.feedback.try{background:#fbefeb;color:#8a4e3b}.game-actions{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:20px}.small{font-size:12px;color:var(--muted)}.finish{text-align:center;padding:28px 10px}.finish .trophy{font-size:60px}.finish h2{font-size:30px}.footer{text-align:center;color:#8b938c;font-size:12px;margin-top:32px}
+@media(max-width:700px){.shell{padding:14px 14px 36px}.hero{grid-template-columns:1fr;padding:25px}.hero-art{min-height:135px}.island{width:145px;height:125px;font-size:62px}.stats{gap:8px}.stat{padding:12px}.stat strong{font-size:18px}.levels{grid-template-columns:1fr}.level{min-height:auto}.choices{grid-template-columns:1fr}.top-note{display:none}}
+</style>
+</head>
+<body>
+<div class="shell">
+<header class="top"><div class="brand"><div class="brand-mark">✦</div><span>任務小隊</span></div><div class="top-note">LEARN · PLAY · GROW</div></header>
+<main>
+<section class="hero" id="welcome">
+<div><span class="eyebrow">準備好展開冒險了嗎？</span><h1>一起完成任務，<br>成為闖關小高手！</h1><p>走進故事情境，觀察線索、做出選擇、挑戰任務。每一次嘗試，都是向前進步的一步！</p><div class="actions"><button class="primary" id="startBtn">開始冒險 →</button><button class="secondary" id="howBtn">遊戲說明</button></div></div>
+<div class="hero-art"><div class="island">🧭</div></div>
+</section>
+<div class="stats"><div class="stat"><small>目前星星</small><strong id="stars">☆ 0</strong></div><div class="stat"><small>完成題數</small><strong id="done">0 題</strong></div><div class="stat"><small>冒險進度</small><strong id="percent">0%</strong></div></div>
+<section id="map"><div class="section-head"><h2>🗺️ 冒險地圖</h2><span>完成任務，解鎖下一站</span></div><div class="levels"><article class="level"><div class="emoji">🌱</div><h3>第一站｜故事起點</h3><p>認識任務情境，找出第一個線索。</p></article><article class="level locked"><div class="emoji">🌳</div><h3>第二站｜線索森林</h3><p>運用觀察與思考，解開更多挑戰。</p></article><article class="level locked"><div class="emoji">🏆</div><h3>第三站｜勇者終點</h3><p>完成最後任務，領取冒險徽章。</p></article></div></section>
+<section class="game" id="game"><div class="game-top"><span class="tag" id="stage">第一站｜任務挑戰</span><span class="small" id="counter">第 1 / 3 題</span></div><div class="progress-wrap"><div class="progress" id="bar"></div></div><div class="small">情境任務</div><h2 class="question" id="question"></h2><div class="choices" id="choices"></div><div class="feedback" id="feedback" role="status"></div><div class="game-actions"><span class="small" id="hint">選出你認為最適合的答案吧！</span><button class="primary" id="nextBtn" disabled>下一題 →</button></div></section>
+<section class="game" id="result"><div class="finish"><div class="trophy">🏅</div><span class="eyebrow">MISSION COMPLETE</span><h2>任務完成！</h2><p id="resultText">你完成了今天的挑戰！</p><button class="primary" id="againBtn">再玩一次 ↻</button></div></section>
+</main><footer class="footer">每一次練習，都是一次小小的成長 ✦</footer>
+</div>
+<script>
+// 待匯入試算表題目：將 questions 的情境、題目、選項、答案與解析替換即可。
+const questions=[
+{scene:"你來到任務起點，發現桌上有一張提示卡。這裡將放入試算表中的第一個情境。",q:"【示範題】請將這裡替換成第一題題目。",choices:["選項 A（待替換）","選項 B（待替換）","選項 C（待替換）","選項 D（待替換）"],answer:0,explain:"這裡可以放入答對原因或學習提示。"},
+{scene:"你找到下一個線索，準備繼續前進。",q:"【示範題】請將這裡替換成第二題題目。",choices:["選項 A（待替換）","選項 B（待替換）","選項 C（待替換）","選項 D（待替換）"],answer:1,explain:"答錯時也能看提示，再試著理解線索。"},
+{scene:"最後一關就在眼前，完成挑戰就能取得徽章！",q:"【示範題】請將這裡替換成第三題題目。",choices:["選項 A（待替換）","選項 B（待替換）","選項 C（待替換）","選項 D（待替換）"],answer:2,explain:"太棒了！完成最後一題，成為任務小隊的一員。"}
+];
+let index=0,stars=0,answered=false;
+const $=id=>document.getElementById(id);
+function updateStats(){ $("stars").textContent="★ "+stars; $("done").textContent=index+" 題"; $("percent").textContent=Math.round(index/questions.length*100)+"%"; }
+function showQuestion(){answered=false;const q=questions[index];$("game").classList.add("active");$("result").classList.remove("active");$("question").textContent=q.scene+"\n\n"+q.q;$("counter").textContent="第 "+(index+1)+" / "+questions.length+" 題";$("bar").style.width=(index/questions.length*100)+"%";$("choices").innerHTML="";$("feedback").className="feedback";$("feedback").textContent="";$("nextBtn").disabled=true;$("nextBtn").textContent=index===questions.length-1?"完成任務 ✓":"下一題 →";$("hint").textContent="選出你認為最適合的答案吧！";q.choices.forEach((c,i)=>{const b=document.createElement("button");b.className="choice";b.textContent=String.fromCharCode(65+i)+". "+c;b.onclick=()=>choose(i,b);$("choices").appendChild(b);});$("game").scrollIntoView({behavior:"smooth",block:"start"});}
+function choose(i,btn){if(answered)return;answered=true;const q=questions[index];const buttons=[...document.querySelectorAll(".choice")];buttons.forEach(b=>b.disabled=true);if(i===q.answer){stars++;btn.classList.add("correct");$("feedback").className="feedback show good";$("feedback").textContent="答對了！★ "+q.explain;}else{btn.classList.add("wrong");buttons[q.answer].classList.add("correct");$("feedback").className="feedback show try";$("feedback").textContent="再想一想！正確答案是 "+String.fromCharCode(65+q.answer)+"。"+q.explain;} $("nextBtn").disabled=false;updateStats();}
+$("startBtn").onclick=()=>{index=0;stars=0;updateStats();$("welcome").style.display="none";$("map").style.display="none";showQuestion();};
+$("howBtn").onclick=()=>alert("閱讀情境，選擇答案。答對可獲得星星；完成所有題目，就能完成任務！");
+$("nextBtn").onclick=()=>{if(!answered)return;index++;updateStats();if(index<questions.length)showQuestion();else{$("game").classList.remove("active");$("result").classList.add("active");$("resultText").textContent="你完成了 "+questions.length+" 題挑戰，獲得 "+stars+" 顆星星！每一次嘗試都值得鼓勵。";$("bar").style.width="100%";$("percent").textContent="100%";$("result").scrollIntoView({behavior:"smooth"});}};
+$("againBtn").onclick=()=>{index=0;stars=0;updateStats();$("result").classList.remove("active");$("welcome").style.display="";$("map").style.display="";window.scrollTo({top:0,behavior:"smooth"});};
+</script>
+</body></html>
